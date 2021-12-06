@@ -1,0 +1,76 @@
+/* ==== DEFAULT STYLES ==== */
+html { box-sizing: border-box; }
+
+*,
+  *::before,
+  *::after {
+    box-sizing: inherit;
+  }
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* utility class */
+
+.flex-center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.spacing > *+* {
+  margin-top: var(--spacer, 2rem);
+}
+
+/* ==== CUSTOM PROPERTIES (VARIABLES) */
+
+/* font */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+:root{
+
+  /* ==== colors is hsl ==== */
+  --clr-primary: #102a42;
+  --clr-secondary: #f1f5f8;
+
+  /* font */
+  font-size: 62.5%;
+
+  --fs-700: clamp(5rem, 10vw, 7.5rem);
+  --fs-400: clamp(1.25rem, 2vw, 1.75rem);
+
+  --ff-primary: 'Roboto', sans-serif;
+}
+
+body {
+  font-family: var(--ff-primary);
+  height: 100vh;
+  background: var(--clr-secondary);
+  color: var(--clr-primary);
+  text-align: center;
+}
+
+h1,p {
+  font-size: var(--fs-700);
+}
+
+.btn {
+  display: inline-block;
+  font-size: var(--fs-400);
+  text-transform: uppercase;
+  letter-spacing: 0.5rem;
+  padding: 0.5rem 2rem;
+  margin-inline: 1rem;
+  background: var(--clr-secondary);
+  border: 1px solid var(--clr-primary);
+  border-radius: 5px;
+  transition: all 0.3s linear;
+}
+
+.btn:hover,
+.btn:focus {
+  cursor: pointer;
+  background: var(--clr-primary);
+  color: var(--clr-secondary);
+}
